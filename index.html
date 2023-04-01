@@ -9,32 +9,42 @@
   </head>
   
   <body>
-    <h1>Grocery Database System</h1>
-    
-    <div id="search-bar">
-      <input type="text" id="search-input" placeholder="Search...">
-      <button id="search-btn" onclick="search()">Search</button>
-    </div>
-    
-    <table>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Stock</th>
-        <th>Actions</th>
-      </tr>
-      
-      
-    </table>
-    
-    <div id="new-product-form">
-      <h2>New Product</h2>
-      <input type="text" id="new-product-name" placeholder="Name">
-      <input type="number" id="new-product-price" placeholder="Price">
-      <input type="number" id="new-product-stock" placeholder="Stock">
-      <button onclick="addNewProduct()">Add Product</button>
-    </div>
-    <script src="scripts/script.js"></script>
+    <body>
+        <div class="container">
+          <span class="menu-trigger">
+            <i class="menu-trigger-bar top"></i>
+            <i class="menu-trigger-bar middle"></i>
+            <i class="menu-trigger-bar bottom"></i>
+          </span>
+          <span class="close-trigger">
+            <i class="close-trigger-bar left"></i>
+            <i class="close-trigger-bar right"></i>
+          </span>
+          <img class="logo" src="https://marlonmira.com/pixel/img/Recurso31.png">
+          <div class="inner-container">
+              <i class="menu-bg top"></i>
+              <i class="menu-bg middle"></i>
+              <i class="menu-bg bottom"></i>
+            <div class="menu-container">
+              <ul class="menu">
+                <li>
+                  <a href="../opcion2/index2.html">Inventario</a>
+                </li>
+                <li>
+                  <a href="#">Modificar inventario</a>
+                </li>
+                <li>
+                  <a href="#">coming soon</a>
+                </li>
+                <li>
+                  <a href="#">coming soon</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+      <script src="scripts/script.js"></script>
   </body>
 </html>
