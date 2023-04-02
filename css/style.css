@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;1,500&family=Comic+Neue:ital,wght@1,300&display=swap');
 
 :root{
     --color-background:aquamarine;
@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   align-content: center;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto";
 
 }
 .container {
