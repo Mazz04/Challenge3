@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod</title>
+    <link rel="stylesheet" href="../css/styleModInventory.css">
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="#">
+                <h1>Delete Item</h1><br>
+                <span>Put the ID or Name of the item you want to delete</span>
+                <input type="text" placeholder="Name" />
+                <input type="number" placeholder="ID" /> <br>
+                <button>Delete</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Create item</h1><br>    
+                <span>Put the item  you want to add</span>
+                <input type="text" placeholder="Name" />
+                <input type="number" placeholder="Stock" />
+                <input type="number" placeholder="Price" /> <br>
+                <button>Create</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>¿no quieres eliminar? </h1>
+                    <p> Presiona el boton para ir a "Crear item"</p>
+                    <button class="ghost" id="signIn">Create item</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>¿quieres elimiar un item?</h1>
+                    <p>presiona el boton para ir a "eliminar item"</p>
+                    <button class="ghost" id="signUp">Delete item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="../scripts/scriptModInventary.js"></script>
+
+    
+</body>
+</html>
