@@ -1,14 +1,13 @@
 const products = [
-  {id: 1120, name: 'Mozzarella cheese', price: '$2.35'},
-  {id: 2125, name: 'Milk', price: '$3.12'},
-  {id: 3323, name: 'Fried potatoes', price: '$1.66'},
-  {id: 4456, name: 'Beer', price: '$4.22'},
-  {id: 5693, name: 'Coke', price: '$3.33'},
-  {id: 4444, name: 'Coca-cola', price: '$1.99'},
-  {id: 1815, name: 'Sausage', price: '2.00'}
+  {id: 1120, name: 'Mozzarella cheese', price: '$2.35',stock: '32', image:'https://images.pexels.com/photos/4109946/pexels-photo-4109946.jpeg?auto=compress&cs=tinysrgb&w=300'}, 
+  {id: 2125, name: 'Milk', price: '$3.12',stock: '16', image: 'https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300'},
+  {id: 3323, name: 'Fried potatoes', price: '$1.66',stock: '10', url:'https://images.pexels.com/photos/6941039/pexels-photo-6941039.jpeg?auto=compress&cs=tinysrgb&w=300'},
+  {id: 4456, name: 'Beer', price: '$4.22',stock: '56', image:'https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&w=300'},
+  {id: 4444, name: 'Coke', price: '$3.33',stock: '23', image:'https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=300'},
+  {id: 5693, name: 'Cookie', price: '$1.99',stock: '16', image:'https://images.pexels.com/photos/230325/pexels-photo-230325.jpeg?auto=compress&cs=tinysrgb&w=300'},
+  {id: 1815, name: 'Sausage', price: '2.00',stock: '25', image:'https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&w=300'},
 ];
 
-// Function to render cards
 function renderCards(productsArray) {
   const cardsContainer = document.getElementById("card");
   cardsContainer.innerHTML = "";
@@ -23,25 +22,22 @@ function renderCards(productsArray) {
         <div class="card__info">
           <span class="card__category">Id: ${productsArray[i].id}</span>
           <h3 class="card__title">${productsArray[i].name}</h3>
-          <span class="card__by">Price <a href="#" class="card__author" title="author">${productsArray[i].price}</a></span>
+          <span class="card__by">Stock <a href="#" class="card__author" title="author">${productsArray[i].stock}</a><br> Price <a href="#" class="card__author" title="author">${productsArray[i].price}</a></span>
         </div>
       </article>
 
       <style>
-        .card_img_${productsArray[i].id}, 
-        .card_img_${productsArray[i].id}, .card__img--hover {
-          background-image: url('https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-        }
+        #card_img_${productsArray[i].id}, 
+        #card_img_${productsArray[i].id}, .card__img--hover {
+          background-image: url('${productsArray[i].image}');
       </style>
     `;
     cardsContainer.insertAdjacentHTML("beforeend", cards);
   }
 }
 
-// Render initial cards
 renderCards(products);
 
-// Function to handle search
 function handleSearch() {
   const searchInput = document.getElementById("search-input");
   const searchValue = searchInput.value.trim().toLowerCase();
@@ -58,7 +54,6 @@ function handleSearch() {
   renderCards(filteredProducts);
 }
 
-// Event listener for search button
 const searchBtn = document.getElementById("search-btn");
 searchBtn.addEventListener("click", handleSearch);
     
