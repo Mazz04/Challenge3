@@ -12,7 +12,7 @@ function renderCards(productsArray) {
   const cardsContainer = document.getElementById("card");
   cardsContainer.innerHTML = "";
   const cards = productsArray.map((product) => `
-    <article class="card card--1">
+    <article class="card card--1" id="cardSize">
       <div class="card__img" id="card_img_${product.id}"></div>
       <a href="#" class="card_link">
         <div class="card__img--hover" id="card__img--hover_${product.id}"></div>
