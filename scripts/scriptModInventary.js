@@ -61,6 +61,37 @@ async function loadProducts() {
 }
 loadProducts();
 const priceInput = document.getElementById("create-price");
+signInButton.addEventListener("click", function(event) {
+  event.preventDefault();
+  addProduct(event);
+});
+function renderCards(productsArray) {
+  const cardsContainer = document.getElementById("card");
+  cardsContainer.innerHTML = "";
+  const cards = productsArray.map((product) => `
+    <article class="card card--1">
+      <div class="card__img" id="card_img_${product.id}"></div>
+      <a href="#" class="card_link">
+        <div class="card__img--hover" id="card__img--hover_${product.id}"></div>
+      </a>
+      <div class="card__info">
+        <span class="card__category">Id: ${product.id}</span>
+        <h3 class="card__title">${product.name}</h3>
+        <span class="card__by">Stock <a href="#" class="card__author" title="author">${product.stock}</a><br> Price <a href="#" class="card__author" title="author">${product.price}</a></span>
+      </div>
+    </article>
+    <style> 
+      #card_img_${product.id}, #card__img--hover_${product.id} {
+        background-image: url('${product.image}');
+        min-width: 175px;
+      }
+      #cardSize{
+        min-width: 200px;
+      }
+    </style>
+  `);
+  cardsContainer.insertAdjacentHTML("beforeend", cards.join(""));
+}
 createItemForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const idInputValue = idInput.value;
@@ -86,4 +117,37 @@ createItemForm.addEventListener("submit", (event) => {
   stockInput.value = "";
   priceInput.value = "";
   renderCards(products);
+});
+
+const deleteItemButton = document.getElementById("signUp");
+
+deleteItemButton.addEventListener("click", () => {
+  const products = JSON.parse(localStorage.getItem("products"));
+  const searchTerm = prompt("Enter the name or ID of the product you want to delete:");
+  
+  if (!searchTerm) {
+    return;
+  }
+  
+  const productIndex = products.findIndex(product => product.id === searchTerm || product.name === searchTerm);
+  
+  if (productIndex === -1) {
+    alert(`Product '${searchTerm}' not found`);
+    return;
+  }
+  
+  const productToDelete = products[productIndex];
+  
+  if (!confirm(`Are you sure you want to delete product '${productToDelete.name}'?`)) {
+    return;
+  }
+  
+  products.splice(productIndex, 1);
+  localStorage.setItem("products", JSON.stringify(products));
+  
+  const productCard = document.getElementById(`product-${productToDelete.id}`);
+  
+  if (productCard) {
+    productCard.parentNode.removeChild(productCard);
+  }
 });
