@@ -1,0 +1,21 @@
+
+[
+        {
+            "name": "Producto 1",
+            "price": "$10.99",
+            "stock": 50,
+            "img": "https://example.com/product1.jpg"
+        },
+        {
+            "name": "Producto 2",
+            "price": "$15.99",
+            "stock": 25,
+            "img": "https://example.com/product2.jpg"
+        },
+        {
+            "name": "Producto 3",
+            "price": "$7.99",
+            "stock": 100,
+            "img": "https://example.com/product3.jpg"
+        }
+]

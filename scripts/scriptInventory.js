@@ -1,12 +1,4 @@
-class Product {
-  constructor(id, name, price, stock, image) {
-    this.id = id;
-    this.name = name;
-    this.price = price;
-    this.stock = stock;
-    this.image = image;
-  }
-}
+import Product from "./products.class.js";
 const products = [
   new Product(1120, 'Mozzarella cheese', '$2.35', 32, 'https://images.pexels.com/photos/4109946/pexels-photo-4109946.jpeg?auto=compress&cs=tinysrgb&w=300'), 
   new Product(2125, 'Milk', '$3.12', 16, 'https://images.pexels.com/photos/248412/pexels-photo-248412.jpeg?auto=compress&cs=tinysrgb&w=300'),
@@ -34,6 +26,10 @@ function renderCards(productsArray) {
     <style> 
       #card_img_${product.id}, #card__img--hover_${product.id} {
         background-image: url('${product.image}');
+        min-width: 175px;
+      }
+      #cardSize{
+        min-width: 200px;
       }
     </style>
   `);
@@ -50,6 +46,8 @@ function handleSearch() {
 }
 
 const searchBtn = document.getElementById("search-btn");
-searchBtn.addEventListener("click", handleSearch);
-    
-    
+if (searchBtn) {
+  searchBtn.addEventListener("click", handleSearch);
+}
+
+
