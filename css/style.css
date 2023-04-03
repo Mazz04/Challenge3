@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,200;1,500&family=Comic+Neue:ital,wght@1,300&display=swap');
 
 :root{
-    --color-background:aquamarine;
-    --container-background-details:rgb(115, 126, 243);
-    --container-background:#f2ead5;
-
+    --color-background:#eaffff;
+    --container-background-details:#87a1ab;
+    --container-background:#c8dfe2;
+    --color-font:#c8dfe2;
 
 }
 
@@ -14,7 +14,12 @@ body {
   align-items: center;
   align-content: center;
   font-family: "Roboto";
+  font-size: x-large;
 
+}
+
+#menu{
+  color:var(--color-font);
 }
 .container {
   background-color: var(--container-background);
@@ -79,7 +84,7 @@ body {
   top: 0; left: 0;
   display: block;
   width: 0%; height: 100%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
 }
 .close-trigger-bar.left {
@@ -91,9 +96,9 @@ body {
 }
 .logo {
   display: block;
-  width: 100px;
+  width: 300px;
   position: absolute;
-  top: 45%; left: 45%;
+  top: 42%; left: 30%;
   margin-top: -52px; margin-left: -32px;
   text-align: center;
   z-index: 10;
@@ -167,5 +172,11 @@ body {
       .menu-bg.bottom {
         top: 105%; left: -20%;
         transform: rotate(-45deg) translateY(25%); 
+      }
+
+      .logo {
+
+        top: 42%; left: 14%;
+
       }
 }
